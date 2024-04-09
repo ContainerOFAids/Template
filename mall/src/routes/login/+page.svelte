@@ -5,109 +5,22 @@
     export let data: PageData;
 </script>
 
-<main>
-    <div class="loginContainer">
-        <h1>Login</h1>
-        <div class="loginContainerForm">
+<main class="flex items-center justify-center flex-col">
+    <header class="bg-surface-100-800-token w-1/3 pl-5 text-2xl font-bold capitalize pt-3 pb-3">Login</header>
+    <div class="loginContainer flex flex-col items-center bg-gradient-to-br variant-gradient-primary-secondary w-1/3 pb-10 pt-4">
+        <div class="loginContainerForm flex justify-center">
             <form action="?/login" method="post" use:enhance>
-                <label>Username: <input type="text" name="username" /></label>
-                <label>Password: <input type="password" name="password" /></label>
-                <button>Log In</button>
+                <label class="font-bold text-xl">Username: <input type="text" name="username" class="input font-bold text-white" placeholder="" /></label>
+                <label class="font-bold text-xl">Password: <input type="password" name="password" class="input font-bold text-white" minlength="6" /></label>
+                <div class=" justify-center flex">
+                    <button class="btn bg-secondary-500 mt-3 w-24 font-">Log In</button>
+                </div>
             </form>
         </div>
-        <a href="/register">Don't have an account?</a>
+        <a href="/register" class=" text-white font-bold mt-2 hover:text-primary-300">Don't have an account?</a>
     </div>
 </main>
 
-<style>
 
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
 
-        background: url('./training.jpg');
-        background-position: center;
-        background-size: cover;
-
-        height: 100vh;
-        width: 100vw;
-    }
-
-    .loginContainer {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        background: var(--background-color);
-        border-radius: 2rem;
-        padding: 20px 40px;
-        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
-
-        color: white;
-        letter-spacing: 2px;
-        gap: 25px;
-    }
-
-    .loginContainer a {
-        position: relative;
-        text-align: left;
-        color: var(--accent-color);
-        text-decoration: none;
-        width: fit-content;
-    }
-
-    .loginContainer a::after {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: var(--accent-color);
-        transition: width 0.3s ease-in-out;
-    }
-
-    .loginContainer a:hover::after {
-        width: 100%;
-    }
-
-    .loginContainerForm form {
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-
-        gap: 10px;
-    }
-
-    .loginContainerForm form input {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        background-color: var(--primary-color);
-        color: white;
-    }
-
-    .loginContainerForm form button {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        background-color: var(--accent-color);
-        color: white;
-        cursor: pointer;
-
-        transition: all 0.3s ease-in-out;
-    }
-
-    .loginContainerForm form button:hover {
-        background-color: var(--accent-color-dark);
-    }
-
-    :root {
-        --background-color: #0c0b0c;
-        --primary-color: #24293b;
-        --accent-color: #c26462;
-        --accent-color-dark: #a84f4d;
-    }
-</style>
+   

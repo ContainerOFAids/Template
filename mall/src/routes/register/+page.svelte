@@ -7,25 +7,25 @@
     let s ="";
 </script>
 
-<main>
-    <div class="registerContainer">
-        <h1>Register</h1>
+<main class="flex items-center justify-center flex-col">
+    <header class="bg-surface-100-800-token w-1/3 pl-5 text-2xl font-bold capitalize pt-3 pb-3">Register</header>
+    <div class="registerContainer flex flex-col items-center bg-gradient-to-br variant-gradient-primary-secondary w-1/3 pb-10 pt-4">
         <div class="registerContainerForm">
             <form action="?/register" method="post" use:enhance>
                 <div class="test">
-                    <label>Username: <input type="text" name="username" class="input"></label>
-                    <label>Password: <input type="password" name="password" class="input"></label>
-                    <label>Repeat Password: <input type="password" name="password-repeat" class="input"></label>
-                    <label>Profile Picture: <input type="text" placeholder="image url" bind:value={s} class="input"></label>
+                    <label class="font-bold text-xl">Username: <input type="text" name="username" class="input font-bold text-white"></label>
+                    <label class="font-bold text-xl">Password: <input type="password" name="password" class="input font-bold text-white"></label>
+                    <label class="font-bold text-xl">Repeat Password: <input type="password" name="password-repeat" class="input font-bold text-white"></label>
+                    <label class="font-bold text-xl">Profile Picture: <input type="text" bind:value={s} class="input font-bold text-white"></label>
                     <label><input type="hidden" value={s} name="pic"></label>
-                    <button>Log In</button>
-                    {#if form?.msg}
-                        <span>{form.msg}</span>
-                    {/if}
+                    <div class=" justify-center flex">
+                        <button class="btn bg-secondary-500 mt-3 w-24 font-">Log In</button>
+                    </div>
+                   
                 </div>
             </form>
         </div>
-        <a href="/login">Already have account?</a>
+        <a href="/login" class=" text-white font-bold mt-2 hover:text-primary-300">Already have account?</a>
     </div>
 </main>
 

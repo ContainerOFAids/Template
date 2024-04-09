@@ -1,22 +1,29 @@
 <script lang="ts">
 	import '../app.postcss';
-
+	import '@fortawesome/fontawesome-free/css/all.css';
+	
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
+    import type { PageData } from './$types';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
-</script>
-<div class="navbar flex flex-row bg-primary-500 p-3">
+	export let data: PageData;
+
+
 	
-	<a href="https://github.com/ContainerOFAids/Mall" class=""><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="" class=" aspect-square w-10 hover:bg-white rounded-full"></a>
+</script>
+<div class="appbar flex flex-row bg-surface-100-800-token p-3 mb-10 shadow-2xl">
+	
+	<a href="https://github.com/ContainerOFAids/Mall" class="btn-icon text-black hover:text-white"><i class="fa-brands fa-github fa-4x ml-5"></i></a>
 	
 	<div class=" justify-center flex flex-row gap-10 w-full">
-		<a href="http://localhost:5173/" class="navbtn h2 hover:text-gray-300">Home</a>
-		<a href="" class="navbtn h2 hover:text-gray-300">About Us</a>
-		<a href="" class="navbtn h2 hover:text-gray-300">Profile</a>
+		<a href="http://localhost:5173/" class="btn h2 font-bold hover:variant-soft-primary">Home</a>
+		<a href="" class="btn h2 font-bold hover:variant-soft-primary">About Us</a>
+		<a href="" class="btn h2 font-bold hover:variant-soft-primary">Profile</a>
+
 	</div>
 	
-	<img src="" alt="">
+	<img src="" alt="" class="profilepic aspect-square">
 
 </div>
 <slot />
